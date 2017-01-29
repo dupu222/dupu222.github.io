@@ -1,10 +1,10 @@
 
-  <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="Chinese">
 <head>
   <meta charset="UTF-8">
   
-    <title>Archives: 2017/1 | DsuineGP的Blog</title>
+    <title>search | DsuineGP的Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Du Pu">
@@ -12,11 +12,12 @@
 
     
     <meta property="og:type" content="website">
-<meta property="og:title" content="DsuineGP的Blog">
-<meta property="og:url" content="http://dupu222.github.io/archives/2017/01/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://dupu222.github.io/search/index.html">
 <meta property="og:site_name" content="DsuineGP的Blog">
+<meta property="og:updated_time" content="2017-01-29T12:23:47.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DsuineGP的Blog">
+<meta name="twitter:title" content="search">
 
     
     <link rel="alternative" href="/atom.xml" title="DsuineGP的Blog" type="application/atom+xml">
@@ -70,47 +71,25 @@
       </header>
       <div id="container">
         
-
-<div class="archive-title" >
-  <h2 class="archive-icon">2017/1</h2>
-  
-  <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">Jan 2017</a><span class="archive-list-count">2</span></li></ul>
- </div>
-  
+<div  id="main" class="page">
+  <div id='cse' style='width:100%;text-align:center'>正在加载搜索结果，请稍等。</div>
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/01/29/第一个blog/" title="第一个blog" itemprop="url">
-  
-
-    <time datetime="2017-01-29T10:19:08.000Z" itemprop="datePublished">2017-01-29</time>
-
-
-    <h1 itemprop="name">第一个blog</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/01/26/hello-world/" title="Hello World" itemprop="url">
-  
-
-    <time datetime="2017-01-26T10:58:23.436Z" itemprop="datePublished">2017-01-26</time>
-
-
-    <h1 itemprop="name">Hello World</h1>
-
-  </a>
-</section>
-
-
-  </div>
-</div>
+<script src="http://www.google.com.hk/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('search', '1', {language : 'zh-CN',style: google.loader.themes.MINIMALIST});
+google.setOnLoadCallback(function(){
+  var customSearchControl = new google.search.CustomSearchControl('008903103789222883926:hiszgnxkwtu');
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.setAutoComplete(true);
+  customSearchControl.draw('cse', options);
+  var match = location.search.match(/q=([^&]*)(&|$)/);
+  if(match && match[1]){
+    var search = decodeURIComponent(match[1]); 
+    customSearchControl.execute(search);
+  }
+},true);
+</script>
 
       </div>
       <footer><div id="footer" >
@@ -210,6 +189,18 @@ $(document).ready(function(){
 
 
 
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"dupu222"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
