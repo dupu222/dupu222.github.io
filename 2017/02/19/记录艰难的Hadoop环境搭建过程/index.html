@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="开始," />
+  <meta name="keywords" content="Hadoop," />
 
 
 
@@ -84,25 +84,34 @@
 
 
 
-<meta name="description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    
-新年目标
-每周更新一篇有价值的文章.
-能抽出时间学习Scala">
+<meta name="description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。
+Hadoop伪分布式环境搭建
+安装JDK配置环境变量，安装ssh配置免密登录。
+安装Hadoop：
+12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local
+
+伪分布式配置修改配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新的一年">
-<meta property="og:url" content="http://dupu222.github.io/2017/01/29/第一个blog/index.html">
+<meta property="og:title" content="记录艰难的Hadoop环境搭建过程">
+<meta property="og:url" content="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    
-新年目标
-每周更新一篇有价值的文章.
-能抽出时间学习Scala">
-<meta property="og:updated_time" content="2017-01-30T04:36:37.000Z">
+<meta property="og:description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。
+Hadoop伪分布式环境搭建
+安装JDK配置环境变量，安装ssh配置免密登录。
+安装Hadoop：
+12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local
+
+伪分布式配置修改配">
+<meta property="og:updated_time" content="2017-02-19T13:29:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新的一年">
-<meta name="twitter:description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    
-新年目标
-每周更新一篇有价值的文章.
-能抽出时间学习Scala">
+<meta name="twitter:title" content="记录艰难的Hadoop环境搭建过程">
+<meta name="twitter:description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。
+Hadoop伪分布式环境搭建
+安装JDK配置环境变量，安装ssh配置免密登录。
+安装Hadoop：
+12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local
+
+伪分布式配置修改配">
 
 
 
@@ -130,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://dupu222.github.io/2017/01/29/第一个blog/"/>
+  <link rel="canonical" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/"/>
 
 
 
 
 
-  <title> 新的一年 | Du Pu的Blog </title>
+  <title> 记录艰难的Hadoop环境搭建过程 | Du Pu的Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +287,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/01/29/第一个blog/">
+  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Du Pu">
@@ -302,7 +311,7 @@
             
             
               
-                新的一年
+                记录艰难的Hadoop环境搭建过程
               
             
           </h1>
@@ -317,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T18:19:08+08:00">
-                2017-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T20:52:08+08:00">
+                2017-02-19
               </time>
             
 
@@ -340,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">Hadoop</span>
                   </a>
                 </span>
 
@@ -358,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/29/第一个blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/29/第一个blog/" itemprop="commentCount"></span>
+                <a href="/2017/02/19/记录艰难的Hadoop环境搭建过程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/记录艰难的Hadoop环境搭建过程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,11 +394,42 @@
       
 
       
-        <h1 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h1><p>鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.<br>趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    </p>
-<h1 id="新年目标"><a href="#新年目标" class="headerlink" title="新年目标"></a>新年目标</h1><ol>
-<li>每周更新一篇有价值的文章.</li>
-<li>能抽出时间学习Scala</li>
+        <p>最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。</p>
+<h1 id="Hadoop伪分布式环境搭建"><a href="#Hadoop伪分布式环境搭建" class="headerlink" title="Hadoop伪分布式环境搭建"></a>Hadoop伪分布式环境搭建</h1><ol>
+<li>安装JDK配置环境变量，安装ssh配置免密登录。</li>
+<li><p>安装Hadoop：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/download</div><div class="line">tar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local</div></pre></td></tr></table></figure>
+</li>
+<li><p>伪分布式配置<br>修改配置文件 : <code>./etc/hadoop/core-site.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>Abase for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件 : <code>./etc/hadoop/hdfs-site.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
+<blockquote>
+<h2 id="Hadoop配置文件说明"><a href="#Hadoop配置文件说明" class="headerlink" title="Hadoop配置文件说明"></a>Hadoop配置文件说明</h2><p>Hadoop 的运行方式是由配置文件决定的（运行 Hadoop 时会读取配置文件），因此如果需要从伪分布式模式切换回非分布式模式，需要删除 core-site.xml 中的配置项。</p>
+<p>此外，伪分布式虽然只需要配置 fs.defaultFS 和 dfs.replication 就可以运行（官方教程如此），不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
+</blockquote>
+<ol>
+<li><p>启动Hadoop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd $&#123;HADOOP_HOME&#125;</div><div class="line">./bin/hdfs namenode -format </div><div class="line">./sbin/start-dfs.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行WordCount示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./bin/hdfs dfs -mkdir -p /user/hadoop     # 创建HDFS目录</div><div class="line">./bin/hdfs dfs -mkdir input</div><div class="line">./bin/hdfs dfs -put etc/hadoop/*.xml input  # 将配置文件作为输入</div><div class="line">./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output &apos;dfs[a-z.]+&apos;</div><div class="line">./bin/hdfs dfs -cat output/*  # 查看输出结果</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>运行Hadoop程序时output目录不能存在,否则会报错。</p>
+</blockquote>
+<ol>
+<li>启动YARN<br>修改重命名配置文件 <code>./etc/hadoop/mapred-site.xml.template</code> ： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>增加以下配置:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>修改<code>./etc/hadoop/yarn-site.xml</code> ：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>启动YARN，需要先执行<code>./sbin/start-dfs.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./sbin/start-yarn.sh</div></pre></td></tr></table></figure></p>
+<p>至此,Hadoop伪分布式环境已经搭建完毕了~</p>
 
       
     </div>
@@ -434,7 +474,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/开始/" rel="tag"># 开始</a>
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
           
         </div>
       
@@ -443,15 +483,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/19/Hadoop The Definitive Guide笔记一/" rel="next" title="Hadoop The Definitive Guide笔记一">
+                <i class="fa fa-chevron-left"></i> Hadoop The Definitive Guide笔记一
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/19/Hadoop The Definitive Guide笔记一/" rel="prev" title="Hadoop The Definitive Guide笔记一">
-                Hadoop The Definitive Guide笔记一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,8 +517,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/29/第一个blog/"
-           data-title="新的一年" data-url="http://dupu222.github.io/2017/01/29/第一个blog/">
+      <div class="ds-thread" data-thread-key="2017/02/19/记录艰难的Hadoop环境搭建过程/"
+           data-title="记录艰难的Hadoop环境搭建过程" data-url="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
       </div>
     
   </div>
@@ -607,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新的开始"><span class="nav-number">1.</span> <span class="nav-text">新的开始</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新年目标"><span class="nav-number">2.</span> <span class="nav-text">新年目标</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop伪分布式环境搭建"><span class="nav-number">1.</span> <span class="nav-text">Hadoop伪分布式环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop配置文件说明"><span class="nav-number">1.1.</span> <span class="nav-text">Hadoop配置文件说明</span></a></li></ol></li></ol></div>
             
 
           </div>
