@@ -84,31 +84,33 @@
 
 
 
-<meta name="description" content="Map and Reduce
+<meta name="description" content="Map and Reduce相关重点概念MapReduce
 MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-MapReduce把程序分成两个阶段:一个map阶段and一个reduce阶段.
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
 
-The output from the map function is processed">
+The output from the map function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop The Definitive Guide笔记一">
 <meta property="og:url" content="http://dupu222.github.io/2017/02/19/Hadoop The Definitive Guide笔记一/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="Map and Reduce
+<meta property="og:description" content="Map and Reduce相关重点概念MapReduce
 MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-MapReduce把程序分成两个阶段:一个map阶段and一个reduce阶段.
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
 
-The output from the map function is processed">
-<meta property="og:updated_time" content="2017-02-19T12:56:38.000Z">
+The output from the map function">
+<meta property="og:image" content="http://dupu222.github.io/image/DataFlow.png">
+<meta property="og:updated_time" content="2017-02-19T15:05:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop The Definitive Guide笔记一">
-<meta name="twitter:description" content="Map and Reduce
+<meta name="twitter:description" content="Map and Reduce相关重点概念MapReduce
 MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-MapReduce把程序分成两个阶段:一个map阶段and一个reduce阶段.
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
 
-The output from the map function is processed">
+The output from the map function">
+<meta name="twitter:image" content="http://dupu222.github.io/image/DataFlow.png">
 
 
 
@@ -391,14 +393,26 @@ The output from the map function is processed">
       
 
       
-        <h1 id="Map-and-Reduce"><a href="#Map-and-Reduce" class="headerlink" title="Map and Reduce"></a>Map and Reduce</h1><blockquote>
+        <h1 id="Map-and-Reduce相关重点概念"><a href="#Map-and-Reduce相关重点概念" class="headerlink" title="Map and Reduce相关重点概念"></a>Map and Reduce相关重点概念</h1><h2 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h2><blockquote>
 <p>MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. </p>
 </blockquote>
-<p>MapReduce把程序分成两个阶段:一个map阶段and一个reduce阶段.</p>
+<p>MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.</p>
 <blockquote>
 <p>The output from the map function is processed by the MapReduce framework beforebeing sent to the reduce function.<br>This processing sorts and groups the key-value pairsby key.</p>
 </blockquote>
 <p>经过map之后的结果键值对,MapReduce框架会在reduce之前进行排序和分组.</p>
+<h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><h3 id="任务拆分"><a href="#任务拆分" class="headerlink" title="任务拆分"></a>任务拆分</h3><blockquote>
+<p>Hadoop divides the input to a MapReduce job into fixed-size pieces called input splits,or just splits. Hadoop creates one map task for each split, which runs the user-definedmap function for each record in the split.</p>
+</blockquote>
+<p>Hadoop将输入输入的任务拆分成固定大小的片段,并为每一个片段执行map函数.</p>
+<p>任务拆分是为了在多台机器上面并行处理,任务如果拆分的足够小,那么更容易进行负载均衡.<br>但是另一方面,如果分块拆分的太小了,那么花在分块调度上面的时间可能会超过执行任务的时间.<br>对于大多数任务,分块的大小为128M,这也是HDFS默认的分块大小.</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><blockquote>
+<p>Map tasks write their output to the local disk, not to HDFS.</p>
+</blockquote>
+<p>Map会将输出存在本地,而不是HDFS.<br>因为Map产生的结果是中间结果,job完成后这些中间结果是可以丢弃的.</p>
+<h3 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h3><p>Map的输出结果在传递给Reduce之前会在本地进行排序,然后通过网络发送的要进行Reduce的节点上合并数据,再将合并后的数据传入用户定义的Reduce.<br>Reduce的结果为了保持可靠性,输出结果会存到HDFS中.</p>
+<h3 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle"></a>shuffle</h3><p>在Map和Reduce之间的操作.</p>
+<p><strong>整个数据流示意图</strong><br><img src="/image/DataFlow.png" alt="data flow"></p>
 
       
     </div>
@@ -622,7 +636,7 @@ The output from the map function is processed">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Map-and-Reduce"><span class="nav-number">1.</span> <span class="nav-text">Map and Reduce</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Map-and-Reduce相关重点概念"><span class="nav-number">1.</span> <span class="nav-text">Map and Reduce相关重点概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce"><span class="nav-number">1.1.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流"><span class="nav-number">1.2.</span> <span class="nav-text">数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务拆分"><span class="nav-number">1.2.1.</span> <span class="nav-text">任务拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.2.2.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce"><span class="nav-number">1.2.3.</span> <span class="nav-text">Reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shuffle"><span class="nav-number">1.2.4.</span> <span class="nav-text">shuffle</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
