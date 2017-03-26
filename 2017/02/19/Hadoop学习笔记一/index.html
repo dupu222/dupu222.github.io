@@ -84,34 +84,33 @@
 
 
 
-<meta name="description" content="hadoop分布式文件系统设计目的
-是为了大文件（大到一台机器无法存储）所设计。
-流式数据读取，一般会在批处理中使用HDFS。
-节点故障是常态，能在机器故障后恢复。
+<meta name="description" content="Map and Reduce相关重点概念MapReduce
+MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。
-设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
+
+The output from the map function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop学习笔记二">
-<meta property="og:url" content="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/index.html">
+<meta property="og:title" content="Hadoop学习笔记一">
+<meta property="og:url" content="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="hadoop分布式文件系统设计目的
-是为了大文件（大到一台机器无法存储）所设计。
-流式数据读取，一般会在批处理中使用HDFS。
-节点故障是常态，能在机器故障后恢复。
+<meta property="og:description" content="Map and Reduce相关重点概念MapReduce
+MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。
-设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
-<meta property="og:updated_time" content="2017-03-26T15:59:23.000Z">
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
+
+The output from the map function">
+<meta property="og:image" content="http://dupu222.github.io/image/DataFlow.png">
+<meta property="og:updated_time" content="2017-03-26T16:02:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop学习笔记二">
-<meta name="twitter:description" content="hadoop分布式文件系统设计目的
-是为了大文件（大到一台机器无法存储）所设计。
-流式数据读取，一般会在批处理中使用HDFS。
-节点故障是常态，能在机器故障后恢复。
+<meta name="twitter:title" content="Hadoop学习笔记一">
+<meta name="twitter:description" content="Map and Reduce相关重点概念MapReduce
+MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
 
-BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。
-设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
+MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.
+
+The output from the map function">
+<meta name="twitter:image" content="http://dupu222.github.io/image/DataFlow.png">
 
 
 
@@ -139,13 +138,13 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
 
 
 
-  <link rel="canonical" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/"/>
+  <link rel="canonical" href="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/"/>
 
 
 
 
 
-  <title> Hadoop学习笔记二 | Du Pu的Blog </title>
+  <title> Hadoop学习笔记一 | Du Pu的Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +286,7 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/">
+  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Du Pu">
@@ -311,7 +310,7 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
             
             
               
-                Hadoop学习笔记二
+                Hadoop学习笔记一
               
             
           </h1>
@@ -326,8 +325,8 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-26T18:56:41+08:00">
-                2017-03-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T13:40:32+08:00">
+                2017-02-19
               </time>
             
 
@@ -367,8 +366,8 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/26/Hadoop学习笔记二/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/26/Hadoop学习笔记二/" itemprop="commentCount"></span>
+                <a href="/2017/02/19/Hadoop学习笔记一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/Hadoop学习笔记一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,30 +393,28 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
       
 
       
-        <h1 id="hadoop分布式文件系统"><a href="#hadoop分布式文件系统" class="headerlink" title="hadoop分布式文件系统"></a>hadoop分布式文件系统</h1><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol>
-<li>是为了大文件（大到一台机器无法存储）所设计。</li>
-<li>流式数据读取，一般会在批处理中使用HDFS。</li>
-<li>节点故障是常态，能在机器故障后恢复。</li>
-</ol>
-<h2 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h2><p>HDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。</p>
-<p>设计成这么大是为了减少寻址的时间，但是也不应该太大，<br>大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的block上，如果block很少，map任务也会很慢。</p>
-<h2 id="Namenodes-and-Datanodes"><a href="#Namenodes-and-Datanodes" class="headerlink" title="Namenodes and Datanodes"></a>Namenodes and Datanodes</h2><h3 id="HDFS集群两种节点"><a href="#HDFS集群两种节点" class="headerlink" title="HDFS集群两种节点"></a>HDFS集群两种节点</h3><ol>
-<li><p>一个 namenode（master）：</p>
-<p> 管理文件系统的命名空间，维护了所有文件和目录的文件系统的文件树与元数据。</p>
-<p> namenode知道一个文件的所有block在哪个datanode上，但并不会存储这些信息。</p>
-</li>
-<li><p>数个datanode（worker）：</p>
-<p> datanode是文件系统的实际工作者，它们在工作的时候存储或取回block，给namenode报告自己存储了那些block。</p>
-</li>
-</ol>
-<p>如果没有namenode文件系统将不可用。实际上，如果namenode消失了文件系统中的所有文件都会丢失，因为这样会不知道如何由block重建为一个文件。</p>
-<h3 id="保证namenode的可用性"><a href="#保证namenode的可用性" class="headerlink" title="保证namenode的可用性"></a>保证namenode的可用性</h3><ol>
-<li><p>定期向硬盘上写入文件系统的元数据，一般是同步的，原子性的。</p>
-</li>
-<li><p>运行secondary namenode,持续从主拷贝文件系统的更改日志并合并（这将消耗大量的系统资源）。当主namenode不可用时，由于同步会有延迟，数据可能会丢失，此时secondary成为主。</p>
-</li>
-</ol>
-<h2 id="Block-Caching"><a href="#Block-Caching" class="headerlink" title="Block Caching"></a>Block Caching</h2><p>通常bkock会从硬盘中读取，但是重复使用的block会缓存在内存中。默认情况下一个block只会缓存在一个namenode中，但是这个是可以控制的。</p>
+        <h1 id="Map-and-Reduce相关重点概念"><a href="#Map-and-Reduce相关重点概念" class="headerlink" title="Map and Reduce相关重点概念"></a>Map and Reduce相关重点概念</h1><h2 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h2><blockquote>
+<p>MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. </p>
+</blockquote>
+<p>MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.</p>
+<blockquote>
+<p>The output from the map function is processed by the MapReduce framework beforebeing sent to the reduce function.<br>This processing sorts and groups the key-value pairsby key.</p>
+</blockquote>
+<p>经过map之后的结果键值对,MapReduce框架会在reduce之前进行排序和分组.</p>
+<h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><h3 id="任务拆分"><a href="#任务拆分" class="headerlink" title="任务拆分"></a>任务拆分</h3><blockquote>
+<p>Hadoop divides the input to a MapReduce job into fixed-size pieces called input splits,or just splits. Hadoop creates one map task for each split, which runs the user-definedmap function for each record in the split.</p>
+</blockquote>
+<p>Hadoop将输入输入的任务拆分成固定大小的片段,并为每一个片段执行map函数.</p>
+<p>任务拆分是为了在多台机器上面并行处理,任务如果拆分的足够小,那么更容易进行负载均衡.<br>但是另一方面,如果分块拆分的太小了,那么花在分块调度上面的时间可能会超过执行任务的时间.<br>对于大多数任务,分块的大小为128M,这也是HDFS默认的分块大小.</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><blockquote>
+<p>Map tasks write their output to the local disk, not to HDFS.</p>
+</blockquote>
+<p>Map会将输出存在本地,而不是HDFS.<br>因为Map产生的结果是中间结果,job完成后这些中间结果是可以丢弃的.</p>
+<h3 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h3><p>Map的输出结果在传递给Reduce之前会在本地进行排序,然后通过网络发送的要进行Reduce的节点上合并数据,再将合并后的数据传入用户定义的Reduce.<br>Reduce的结果为了保持可靠性,输出结果会存到HDFS中.</p>
+<h3 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle"></a>shuffle</h3><p>在Map和Reduce之间的操作.</p>
+<p><strong>整个数据流示意图</strong><br><img src="/image/DataFlow.png" alt="data flow"></p>
+<h1 id="Conbiner-Fuctions"><a href="#Conbiner-Fuctions" class="headerlink" title="Conbiner Fuctions"></a>Conbiner Fuctions</h1><h2 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h2><p>Mapreduce作业的会被集群之间的带宽限制性能,Conbiner被用来优化map和reduce作业之间的数据交换<br>hadoop允许用户在map和reduce作业之间自定义conbiner function,因为这是一个优化性能的操作,<br>hadoop并能保证会在map作业输出时候执行几次.</p>
+<h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><p>比如求最大值的时候,可以在各节点计算出最大值之后,在reduce作业中计算各节点最大值中的最大值.</p>
 
       
     </div>
@@ -473,8 +470,8 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/19/记录艰难的Hadoop环境搭建过程/" rel="next" title="记录艰难的Hadoop环境搭建过程">
-                <i class="fa fa-chevron-left"></i> 记录艰难的Hadoop环境搭建过程
+              <a href="/2017/01/29/第一个blog/" rel="next" title="新的一年">
+                <i class="fa fa-chevron-left"></i> 新的一年
               </a>
             
           </div>
@@ -482,6 +479,10 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/19/记录艰难的Hadoop环境搭建过程/" rel="prev" title="记录艰难的Hadoop环境搭建过程">
+                记录艰难的Hadoop环境搭建过程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -507,8 +508,8 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/26/Hadoop学习笔记二/"
-           data-title="Hadoop学习笔记二" data-url="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/">
+      <div class="ds-thread" data-thread-key="2017/02/19/Hadoop学习笔记一/"
+           data-title="Hadoop学习笔记一" data-url="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/">
       </div>
     
   </div>
@@ -637,7 +638,7 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hadoop分布式文件系统"><span class="nav-number">1.</span> <span class="nav-text">hadoop分布式文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计目的"><span class="nav-number">1.1.</span> <span class="nav-text">设计目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blocks"><span class="nav-number">1.2.</span> <span class="nav-text">Blocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Namenodes-and-Datanodes"><span class="nav-number">1.3.</span> <span class="nav-text">Namenodes and Datanodes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS集群两种节点"><span class="nav-number">1.3.1.</span> <span class="nav-text">HDFS集群两种节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保证namenode的可用性"><span class="nav-number">1.3.2.</span> <span class="nav-text">保证namenode的可用性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-Caching"><span class="nav-number">1.4.</span> <span class="nav-text">Block Caching</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Map-and-Reduce相关重点概念"><span class="nav-number">1.</span> <span class="nav-text">Map and Reduce相关重点概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce"><span class="nav-number">1.1.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流"><span class="nav-number">1.2.</span> <span class="nav-text">数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务拆分"><span class="nav-number">1.2.1.</span> <span class="nav-text">任务拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.2.2.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce"><span class="nav-number">1.2.3.</span> <span class="nav-text">Reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shuffle"><span class="nav-number">1.2.4.</span> <span class="nav-text">shuffle</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conbiner-Fuctions"><span class="nav-number">2.</span> <span class="nav-text">Conbiner Fuctions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决了什么问题"><span class="nav-number">2.1.</span> <span class="nav-text">解决了什么问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用处"><span class="nav-number">2.2.</span> <span class="nav-text">用处</span></a></li></ol></li></ol></div>
             
 
           </div>
