@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hadoop," />
+  <meta name="keywords" content="Hadoop,读书笔记," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。 Hadoop伪分布式环境搭建 安装JDK配置环境变量，安装ssh配置免密登录。 安装Hadoop： 12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local  伪分布式配置修改配">
-<meta name="keywords" content="Hadoop">
+<meta name="description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
+<meta name="keywords" content="Hadoop,读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录艰难的Hadoop环境搭建过程">
-<meta property="og:url" content="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/index.html">
+<meta property="og:title" content="Hadoop学习笔记三">
+<meta property="og:url" content="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。 Hadoop伪分布式环境搭建 安装JDK配置环境变量，安装ssh配置免密登录。 安装Hadoop： 12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local  伪分布式配置修改配">
-<meta property="og:updated_time" content="2017-02-19T13:43:19.597Z">
+<meta property="og:description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
+<meta property="og:updated_time" content="2017-06-07T14:22:09.049Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录艰难的Hadoop环境搭建过程">
-<meta name="twitter:description" content="最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。 Hadoop伪分布式环境搭建 安装JDK配置环境变量，安装ssh配置免密登录。 安装Hadoop： 12cd ~/downloadtar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local  伪分布式配置修改配">
+<meta name="twitter:title" content="Hadoop学习笔记三">
+<meta name="twitter:description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/"/>
+  <link rel="canonical" href="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/"/>
 
 
 
 
 
-  <title> 记录艰难的Hadoop环境搭建过程 | Du Pu的Blog </title>
+  <title> Hadoop学习笔记三 | Du Pu的Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
+  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Du Pu">
@@ -294,7 +294,7 @@
             
             
               
-                记录艰难的Hadoop环境搭建过程
+                Hadoop学习笔记三
               
             
           </h1>
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T20:52:08+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-06T22:06:58+08:00">
+                2017-06-06
               </time>
             
 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/记录艰难的Hadoop环境搭建过程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/记录艰难的Hadoop环境搭建过程/" itemprop="commentCount"></span>
+                <a href="/2017/06/06/Hadoop学习笔记三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/06/Hadoop学习笔记三/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,42 +377,27 @@
       
 
       
-        <p>最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。</p>
-<h1 id="Hadoop伪分布式环境搭建"><a href="#Hadoop伪分布式环境搭建" class="headerlink" title="Hadoop伪分布式环境搭建"></a>Hadoop伪分布式环境搭建</h1><ol>
-<li>安装JDK配置环境变量，安装ssh配置免密登录。</li>
-<li><p>安装Hadoop：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/download</div><div class="line">tar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local</div></pre></td></tr></table></figure>
-</li>
-<li><p>伪分布式配置<br>修改配置文件 : <code>./etc/hadoop/core-site.xml</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>Abase for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置文件 : <code>./etc/hadoop/hdfs-site.xml</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
+        <h1 id="HDFS数据流"><a href="#HDFS数据流" class="headerlink" title="HDFS数据流"></a>HDFS数据流</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p><a href="/image/HDFS_data_flow.png">从HDFS读取数据</a></p>
+<h3 id="读取数据的过程"><a href="#读取数据的过程" class="headerlink" title="读取数据的过程"></a>读取数据的过程</h3><ol>
+<li>客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例.</li>
+<li>DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址.</li>
+<li>DistributedFileSystem返回一个FSDataInputStream对象,client通过调用此对象的read方法从指定地址的datanode获取第一个block.当第一个block获取后,将会关闭连接并从最近的datanode获取下一个block.这些对客户端来说都是透明的.</li>
 </ol>
-<blockquote>
-<h2 id="Hadoop配置文件说明"><a href="#Hadoop配置文件说明" class="headerlink" title="Hadoop配置文件说明"></a>Hadoop配置文件说明</h2><p>Hadoop 的运行方式是由配置文件决定的（运行 Hadoop 时会读取配置文件），因此如果需要从伪分布式模式切换回非分布式模式，需要删除 core-site.xml 中的配置项。</p>
-<p>此外，伪分布式虽然只需要配置 fs.defaultFS 和 dfs.replication 就可以运行（官方教程如此），不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
-</blockquote>
+<h3 id="Hadoop如何选择’最近’的block"><a href="#Hadoop如何选择’最近’的block" class="headerlink" title="Hadoop如何选择’最近’的block"></a>Hadoop如何选择’最近’的block</h3><p>通过正确配置网络拓扑结构,Hadoop会依照以下优先级选取block地址:</p>
 <ol>
-<li><p>启动Hadoop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd $&#123;HADOOP_HOME&#125;</div><div class="line">./bin/hdfs namenode -format </div><div class="line">./sbin/start-dfs.sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行WordCount示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./bin/hdfs dfs -mkdir -p /user/hadoop     # 创建HDFS目录</div><div class="line">./bin/hdfs dfs -mkdir input</div><div class="line">./bin/hdfs dfs -put etc/hadoop/*.xml input  # 将配置文件作为输入</div><div class="line">./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output &apos;dfs[a-z.]+&apos;</div><div class="line">./bin/hdfs dfs -cat output/*  # 查看输出结果</div></pre></td></tr></table></figure>
-</li>
+<li>同一节点(本机)</li>
+<li>同一机架</li>
+<li>同一数据中心</li>
+<li>不同数据中心</li>
 </ol>
-<blockquote>
-<p>运行Hadoop程序时output目录不能存在,否则会报错。这是为了防止数据丢，比如新的任务结果覆盖了耗时很长的久任务结果，这往往是人们不愿意看到的。</p>
-</blockquote>
-<ol>
-<li>启动YARN<br>修改重命名配置文件 <code>./etc/hadoop/mapred-site.xml.template</code> ： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml</div></pre></td></tr></table></figure>
-</li>
+<h2 id="写入数据"><a href="#写入数据" class="headerlink" title="写入数据"></a>写入数据</h2><p><a href="/image/HDFS_data_flow_write.png">从HDFS读取数据</a></p>
+<h3 id="写入数据的过程"><a href="#写入数据的过程" class="headerlink" title="写入数据的过程"></a>写入数据的过程</h3><ol>
+<li>客户端调用DFS对象的create()方法向namenode发送一个写请求,namenode在执行完一些检查,保证文件不存在并且客户端有权限创建文件之后返回一个DFSOutputStream对象.</li>
+<li>DFSOutputStream将要写入的HDFS的文件分割成一些包,并将其写入到外置的data queue队列中.DataStrem消费这个队列,从namenode获取一些合适的datanode去存储这些包的副本.</li>
+<li>假定副本级别为3,那么将有3个datanode在流水线中,DataStream线程将包发送给流水线中的第一个datanode存储完成后,依次转发给流水线后面的datanode进行此操作.</li>
+<li>同时DFSOutputStream维护一个ack queue队列,等待流水线里所有datanode存储完成一个包之后,这个包从队列中移除.<br>假如有datanode写入失败,流水线将关闭,ack queue中的包将添加到data queue的前端以保证失败的节点下游的datanode不会丢失包.正常的节点会联系namenode,保证失败节点在恢复后删除掉这些包.余下的包将会写入正常节点,并会在另外的节点上复制,保证分片的数量.</li>
 </ol>
-<p>增加以下配置:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>修改<code>./etc/hadoop/yarn-site.xml</code> ：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>启动YARN，需要先执行<code>./sbin/start-dfs.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./sbin/start-yarn.sh</div></pre></td></tr></table></figure></p>
-<p>至此,Hadoop伪分布式环境已经搭建完毕了~</p>
+<h3 id="DFSOutputStream内部原理示意图"><a href="#DFSOutputStream内部原理示意图" class="headerlink" title="DFSOutputStream内部原理示意图"></a>DFSOutputStream内部原理示意图</h3><p><a href="/image/DFSOutputStream内部原理.png">DFSOutputStream内部原理</a></p>
 
       
     </div>
@@ -459,6 +444,8 @@
           
             <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
           
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
         </div>
       
 
@@ -466,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/19/Hadoop学习笔记一/" rel="next" title="Hadoop学习笔记一">
-                <i class="fa fa-chevron-left"></i> Hadoop学习笔记一
+              <a href="/2017/03/26/Hadoop学习笔记二/" rel="next" title="Hadoop学习笔记二">
+                <i class="fa fa-chevron-left"></i> Hadoop学习笔记二
               </a>
             
           </div>
@@ -475,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/26/Hadoop学习笔记二/" rel="prev" title="Hadoop学习笔记二">
-                Hadoop学习笔记二 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,8 +487,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/19/记录艰难的Hadoop环境搭建过程/"
-           data-title="记录艰难的Hadoop环境搭建过程" data-url="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
+      <div class="ds-thread" data-thread-key="2017/06/06/Hadoop学习笔记三/"
+           data-title="Hadoop学习笔记三" data-url="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/">
       </div>
     
   </div>
@@ -634,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop伪分布式环境搭建"><span class="nav-number">1.</span> <span class="nav-text">Hadoop伪分布式环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop配置文件说明"><span class="nav-number">1.1.</span> <span class="nav-text">Hadoop配置文件说明</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HDFS数据流"><span class="nav-number">1.</span> <span class="nav-text">HDFS数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数据"><span class="nav-number">1.1.</span> <span class="nav-text">读取数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数据的过程"><span class="nav-number">1.1.1.</span> <span class="nav-text">读取数据的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop如何选择’最近’的block"><span class="nav-number">1.1.2.</span> <span class="nav-text">Hadoop如何选择’最近’的block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写入数据"><span class="nav-number">1.2.</span> <span class="nav-text">写入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写入数据的过程"><span class="nav-number">1.2.1.</span> <span class="nav-text">写入数据的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFSOutputStream内部原理示意图"><span class="nav-number">1.2.2.</span> <span class="nav-text">DFSOutputStream内部原理示意图</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
