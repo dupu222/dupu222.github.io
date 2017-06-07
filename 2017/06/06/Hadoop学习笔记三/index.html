@@ -84,17 +84,21 @@
 
 
 
-<meta name="description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
+<meta name="description" content="HDFS数据流读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSystem返回一个FS">
 <meta name="keywords" content="Hadoop,读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop学习笔记三">
 <meta property="og:url" content="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
-<meta property="og:updated_time" content="2017-06-07T14:22:09.049Z">
+<meta property="og:description" content="HDFS数据流读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSystem返回一个FS">
+<meta property="og:image" content="http://dupu222.github.io/image/HDFS_data_flow.png">
+<meta property="og:image" content="http://dupu222.github.io/image/HDFS_data_flow_write.png">
+<meta property="og:image" content="http://dupu222.github.io/image/DFSOutputStream内部原理.png">
+<meta property="og:updated_time" content="2017-06-07T14:50:48.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop学习笔记三">
-<meta name="twitter:description" content="HDFS数据流读取数据从HDFS读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSys">
+<meta name="twitter:description" content="HDFS数据流读取数据 读取数据的过程 客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例. DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址. DistributedFileSystem返回一个FS">
+<meta name="twitter:image" content="http://dupu222.github.io/image/HDFS_data_flow.png">
 
 
 
@@ -377,7 +381,7 @@
       
 
       
-        <h1 id="HDFS数据流"><a href="#HDFS数据流" class="headerlink" title="HDFS数据流"></a>HDFS数据流</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p><a href="/image/HDFS_data_flow.png">从HDFS读取数据</a></p>
+        <h1 id="HDFS数据流"><a href="#HDFS数据流" class="headerlink" title="HDFS数据流"></a>HDFS数据流</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p><img src="/image/HDFS_data_flow.png" alt="从HDFS读取数据"></p>
 <h3 id="读取数据的过程"><a href="#读取数据的过程" class="headerlink" title="读取数据的过程"></a>读取数据的过程</h3><ol>
 <li>客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例.</li>
 <li>DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址.</li>
@@ -390,14 +394,14 @@
 <li>同一数据中心</li>
 <li>不同数据中心</li>
 </ol>
-<h2 id="写入数据"><a href="#写入数据" class="headerlink" title="写入数据"></a>写入数据</h2><p><a href="/image/HDFS_data_flow_write.png">从HDFS读取数据</a></p>
+<h2 id="写入数据"><a href="#写入数据" class="headerlink" title="写入数据"></a>写入数据</h2><p><img src="/image/HDFS_data_flow_write.png" alt="从HDFS读取数据"></p>
 <h3 id="写入数据的过程"><a href="#写入数据的过程" class="headerlink" title="写入数据的过程"></a>写入数据的过程</h3><ol>
 <li>客户端调用DFS对象的create()方法向namenode发送一个写请求,namenode在执行完一些检查,保证文件不存在并且客户端有权限创建文件之后返回一个DFSOutputStream对象.</li>
 <li>DFSOutputStream将要写入的HDFS的文件分割成一些包,并将其写入到外置的data queue队列中.DataStrem消费这个队列,从namenode获取一些合适的datanode去存储这些包的副本.</li>
 <li>假定副本级别为3,那么将有3个datanode在流水线中,DataStream线程将包发送给流水线中的第一个datanode存储完成后,依次转发给流水线后面的datanode进行此操作.</li>
 <li>同时DFSOutputStream维护一个ack queue队列,等待流水线里所有datanode存储完成一个包之后,这个包从队列中移除.<br>假如有datanode写入失败,流水线将关闭,ack queue中的包将添加到data queue的前端以保证失败的节点下游的datanode不会丢失包.正常的节点会联系namenode,保证失败节点在恢复后删除掉这些包.余下的包将会写入正常节点,并会在另外的节点上复制,保证分片的数量.</li>
 </ol>
-<h3 id="DFSOutputStream内部原理示意图"><a href="#DFSOutputStream内部原理示意图" class="headerlink" title="DFSOutputStream内部原理示意图"></a>DFSOutputStream内部原理示意图</h3><p><a href="/image/DFSOutputStream内部原理.png">DFSOutputStream内部原理</a></p>
+<h3 id="DFSOutputStream内部原理示意图"><a href="#DFSOutputStream内部原理示意图" class="headerlink" title="DFSOutputStream内部原理示意图"></a>DFSOutputStream内部原理示意图</h3><p><img src="/image/DFSOutputStream内部原理.png" alt="DFSOutputStream内部原理"></p>
 
       
     </div>
