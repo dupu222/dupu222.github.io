@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="开始," />
+  <meta name="keywords" content="数据结构,二叉树," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.     新年目标 每周更新一篇有价值的文章. 能抽出时间学习Scala 学习更多大数据技能">
-<meta name="keywords" content="开始">
+<meta name="description" content="二叉树查找树二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项. 二叉树节点的定义1234567// AnyType extends Comparableprivate static class BinaryNode&amp;lt;AnyType&amp;gt; &amp;#123;    AnyType element;    BinaryNode left;    BinartNod">
+<meta name="keywords" content="数据结构,二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新的一年">
-<meta property="og:url" content="http://dupu222.github.io/2017/01/29/第一个blog/index.html">
+<meta property="og:title" content="数据结构之二叉树(一)">
+<meta property="og:url" content="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.     新年目标 每周更新一篇有价值的文章. 能抽出时间学习Scala 学习更多大数据技能">
-<meta property="og:updated_time" content="2017-03-19T05:13:31.393Z">
+<meta property="og:description" content="二叉树查找树二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项. 二叉树节点的定义1234567// AnyType extends Comparableprivate static class BinaryNode&amp;lt;AnyType&amp;gt; &amp;#123;    AnyType element;    BinaryNode left;    BinartNod">
+<meta property="og:updated_time" content="2017-06-19T11:44:40.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新的一年">
-<meta name="twitter:description" content="新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.     新年目标 每周更新一篇有价值的文章. 能抽出时间学习Scala 学习更多大数据技能">
+<meta name="twitter:title" content="数据结构之二叉树(一)">
+<meta name="twitter:description" content="二叉树查找树二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项. 二叉树节点的定义1234567// AnyType extends Comparableprivate static class BinaryNode&amp;lt;AnyType&amp;gt; &amp;#123;    AnyType element;    BinaryNode left;    BinartNod">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://dupu222.github.io/2017/01/29/第一个blog/"/>
+  <link rel="canonical" href="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/"/>
 
 
 
 
 
-  <title> 新的一年 | Du Pu的Blog </title>
+  <title> 数据结构之二叉树(一) | Du Pu的Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/01/29/第一个blog/">
+  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Du Pu">
@@ -294,7 +294,7 @@
             
             
               
-                新的一年
+                数据结构之二叉树(一)
               
             
           </h1>
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T18:19:08+08:00">
-                2017-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T22:06:46+08:00">
+                2017-06-18
               </time>
             
 
@@ -332,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/29/第一个blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/29/第一个blog/" itemprop="commentCount"></span>
+                <a href="/2017/06/18/数据结构之二叉树(一)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/18/数据结构之二叉树(一)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,11 +377,23 @@
       
 
       
-        <h1 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h1><p>鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.<br>趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    </p>
-<h1 id="新年目标"><a href="#新年目标" class="headerlink" title="新年目标"></a>新年目标</h1><ol>
-<li><del>每周更新一篇有价值的文章.</del></li>
-<li>能抽出时间学习Scala</li>
-<li>学习更多大数据技能</li>
+        <h1 id="二叉树查找树"><a href="#二叉树查找树" class="headerlink" title="二叉树查找树"></a>二叉树查找树</h1><p>二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项.</p>
+<h2 id="二叉树节点的定义"><a href="#二叉树节点的定义" class="headerlink" title="二叉树节点的定义"></a>二叉树节点的定义</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// AnyType extends Comparable</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryNode</span>&lt;<span class="title">AnyType</span>&gt; </span>&#123;</div><div class="line">    AnyType element;</div><div class="line">    BinaryNode left;</div><div class="line">    BinartNode right;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二叉查找树架构"><a href="#二叉查找树架构" class="headerlink" title="二叉查找树架构"></a>二叉查找树架构</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span>&lt;<span class="title">AnyType</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;? <span class="title">super</span> <span class="title">AnyType</span>&gt;&gt; </span>&#123;</div><div class="line">   BinaryNode&lt;AnyType&gt; root;  <span class="comment">// 根节点</span></div><div class="line">   <span class="comment">//  insert/remove/contains/findXXX... 等方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="contains方法"><a href="#contains方法" class="headerlink" title="contains方法"></a>contains方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(AnyType x, BinaryNode&lt;AnyType&gt; t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> ( t == <span class="keyword">null</span> ) renturn <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">int</span> cmp = t.compareTo( t.element );</div><div class="line">    <span class="keyword">if</span> ( cmp &gt; <span class="number">0</span> ) <span class="keyword">return</span> contains( x, t.right );</div><div class="line">    <span class="keyword">if</span> ( cmp &lt; <span class="number">0</span> ) <span class="keyword">return</span> contains( x, t.left );</div><div class="line">    <span class="keyword">if</span> ( cmp == <span class="number">0</span> ) <span class="keyword">return</span> ture;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="findMin和findMax"><a href="#findMin和findMax" class="headerlink" title="findMin和findMax"></a>findMin和findMax</h2><p>min就是查找最左的节点,max就是查找最右的节点.</p>
+<h2 id="insert方法"><a href="#insert方法" class="headerlink" title="insert方法"></a>insert方法</h2><p>基本思路与contains方法相同,查找出节点应该存在的地方,如果存在就什么事情也不做或者覆盖.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function">BinaryNode <span class="title">insert</span><span class="params">(AnyType x ,BinaryNode t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (t == <span class="keyword">null</span>) </div><div class="line">       <span class="keyword">return</span> <span class="keyword">new</span> BinaryNode(x) ...<span class="comment">// 把插入的元素作为新的root节点并返回</span></div><div class="line"></div><div class="line">    <span class="keyword">int</span> cmp = x compareTo t.element</div><div class="line"></div><div class="line">    <span class="keyword">if</span> cmp&gt;<span class="number">0</span></div><div class="line">        ...<span class="comment">// 向右节点递归插入</span></div><div class="line">    <span class="keyword">if</span> cmp&lt;<span class="number">0</span></div><div class="line">        ...<span class="comment">// 向左节点递归插入</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        ;<span class="comment">// 重复元素</span></div><div class="line">    <span class="keyword">return</span> t;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="remove方法"><a href="#remove方法" class="headerlink" title="remove方法"></a>remove方法</h2><p>相对来说,删除元素的方法比较复杂一些,再删除一个节点的时候会有以下几种情况:</p>
+<ol>
+<li><p>是叶子节点</p>
+<p> 因为没有子节点,那么可以直接删除.</p>
+</li>
+<li><p>有一个子节点</p>
+<p> 调整父节点的链接直接指向子节点,以绕过该节点.</p>
+</li>
+<li><p>有两个子节点</p>
+<p> 一种删除策略是用右子树中的最小节点的data替代该节点,并递归的删除那个最小节点(或者以同样的方法处理左子树中的最大节点).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function">BinaryNode <span class="title">remove</span><span class="params">(AnyType x,BinaryNode t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (t==<span class="keyword">null</span>)</div><div class="line">        <span class="comment">// 没找到不做任何事</span></div><div class="line">    <span class="keyword">int</span> cmp = x companreTo t.element;</div><div class="line">    <span class="keyword">if</span> cmp&gt;<span class="number">0</span></div><div class="line">        ... <span class="comment">//递归remove右子树</span></div><div class="line">    <span class="keyword">if</span> cmp&lt;<span class="number">0</span></div><div class="line">        ... <span class="comment">//递归remove左子树</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> t.left notNull &amp;&amp; t.reght notNull <span class="comment">// 两个子节点</span></div><div class="line">        t.data = findMin (t.right)  <span class="comment">// 找到右子树中最小项,并返回该项的data</span></div><div class="line">        t.right = remove(t.data,t.right) <span class="comment">//从右子树中删除节点,并更新右子树的root</span></div><div class="line">    <span class="keyword">else</span> <span class="comment">//一个子节点</span></div><div class="line">        t = t.left != <span class="keyword">null</span> ? t.left :t.right <span class="comment">//将父节点直接指向改节点的唯一子节点</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> t</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -427,7 +439,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/开始/" rel="tag"># 开始</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/二叉树/" rel="tag"># 二叉树</a>
           
         </div>
       
@@ -436,15 +450,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/06/Hadoop学习笔记三/" rel="next" title="Hadoop学习笔记三">
+                <i class="fa fa-chevron-left"></i> Hadoop学习笔记三
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/19/Hadoop学习笔记一/" rel="prev" title="Hadoop学习笔记一">
-                Hadoop学习笔记一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,8 +484,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/29/第一个blog/"
-           data-title="新的一年" data-url="http://dupu222.github.io/2017/01/29/第一个blog/">
+      <div class="ds-thread" data-thread-key="2017/06/18/数据结构之二叉树(一)/"
+           data-title="数据结构之二叉树(一)" data-url="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/">
       </div>
     
   </div>
@@ -600,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新的开始"><span class="nav-number">1.</span> <span class="nav-text">新的开始</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新年目标"><span class="nav-number">2.</span> <span class="nav-text">新年目标</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树查找树"><span class="nav-number">1.</span> <span class="nav-text">二叉树查找树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树节点的定义"><span class="nav-number">1.1.</span> <span class="nav-text">二叉树节点的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉查找树架构"><span class="nav-number">1.2.</span> <span class="nav-text">二叉查找树架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contains方法"><span class="nav-number">1.3.</span> <span class="nav-text">contains方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findMin和findMax"><span class="nav-number">1.4.</span> <span class="nav-text">findMin和findMax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert方法"><span class="nav-number">1.5.</span> <span class="nav-text">insert方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove方法"><span class="nav-number">1.6.</span> <span class="nav-text">remove方法</span></a></li></ol></li></ol></div>
             
 
           </div>
