@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,6 +15,9 @@
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -100,13 +103,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6380998723551364000',
-      author: '博主大人'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -134,14 +137,9 @@
   
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-91111556-1', 'auto');
-  ga('send', 'pageview');
-</script>
+
+
+
 
 
 
@@ -156,33 +154,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Du Pu的Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Du Pu的Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-    
-      <p class="site-subtitle"></p>
-    
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -202,26 +202,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -232,12 +212,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            关于
+            标签
           </a>
         </li>
       
@@ -270,20 +250,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -312,7 +289,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T22:06:46+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T22:06:46+08:00">
                 2017-06-18
               </time>
             
@@ -361,8 +338,8 @@
           
 
           
-
           
+
           
 
           
@@ -382,16 +359,26 @@
       
         
           
-          二叉树查找树二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项.
-二叉树节点的定义1234567// AnyType extends Comparableprivate static class BinaryNode&lt;AnyType&gt; &#123;   
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/18/数据结构之二叉树(一)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="二叉树查找树"><a href="#二叉树查找树" class="headerlink" title="二叉树查找树"></a>二叉树查找树</h1><p>二叉查找树的性质是,对于树中的每个节点X,它的左子树中的所有项都小于右节点中的所有项.</p>
+<h2 id="二叉树节点的定义"><a href="#二叉树节点的定义" class="headerlink" title="二叉树节点的定义"></a>二叉树节点的定义</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// AnyType extends Comparable</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryNode</span>&lt;<span class="title">AnyType</span>&gt; </span>&#123;</div><div class="line">    AnyType element;</div><div class="line">    BinaryNode left;</div><div class="line">    BinartNode right;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二叉查找树架构"><a href="#二叉查找树架构" class="headerlink" title="二叉查找树架构"></a>二叉查找树架构</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span>&lt;<span class="title">AnyType</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;? <span class="title">super</span> <span class="title">AnyType</span>&gt;&gt; </span>&#123;</div><div class="line">   BinaryNode&lt;AnyType&gt; root;  <span class="comment">// 根节点</span></div><div class="line">   <span class="comment">//  insert/remove/contains/findXXX... 等方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="contains方法"><a href="#contains方法" class="headerlink" title="contains方法"></a>contains方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(AnyType x, BinaryNode&lt;AnyType&gt; t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> ( t == <span class="keyword">null</span> ) renturn <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">int</span> cmp = t.compareTo( t.element );</div><div class="line">    <span class="keyword">if</span> ( cmp &gt; <span class="number">0</span> ) <span class="keyword">return</span> contains( x, t.right );</div><div class="line">    <span class="keyword">if</span> ( cmp &lt; <span class="number">0</span> ) <span class="keyword">return</span> contains( x, t.left );</div><div class="line">    <span class="keyword">if</span> ( cmp == <span class="number">0</span> ) <span class="keyword">return</span> ture;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="findMin和findMax"><a href="#findMin和findMax" class="headerlink" title="findMin和findMax"></a>findMin和findMax</h2><p>min就是查找最左的节点,max就是查找最右的节点.</p>
+<h2 id="insert方法"><a href="#insert方法" class="headerlink" title="insert方法"></a>insert方法</h2><p>基本思路与contains方法相同,查找出节点应该存在的地方,如果存在就什么事情也不做或者覆盖.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function">BinaryNode <span class="title">insert</span><span class="params">(AnyType x ,BinaryNode t)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (t == <span class="keyword">null</span>) </div><div class="line">       <span class="keyword">return</span> <span class="keyword">new</span> BinaryNode(x) ...<span class="comment">// 把插入的元素作为新的root节点并返回</span></div><div class="line"></div><div class="line">    <span class="keyword">int</span> cmp = x compareTo t.element</div><div class="line"></div><div class="line">    <span class="keyword">if</span> cmp&gt;<span class="number">0</span></div><div class="line">        ...<span class="comment">// 向右节点递归插入</span></div><div class="line">    <span class="keyword">if</span> cmp&lt;<span class="number">0</span></div><div class="line">        ...<span class="comment">// 向左节点递归插入</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        ;<span class="comment">// 重复元素</span></div><div class="line">    <span class="keyword">return</span> t;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="remove方法"><a href="#remove方法" class="headerlink" title="remove方法"></a>remove方法</h2><p>相对来说,删除元素的方法比较复杂一些,再删除一个节点的时候会有以下几种情况:</p>
+<ol>
+<li><p>是叶子节点</p>
+<p> 因为没有子节点,那么可以直接删除.</p>
+</li>
+<li><p>有一个子节点</p>
+<p> 调整父节点的链接直接指向子节点,以绕过该节点.</p>
+</li>
+<li><p>有两个子节点</p>
+<p> 一种删除策略是用右子树中的最小节点的data替代该节点,并递归的删除那个最小节点(或者以同样的方法处理左子树中的最大节点).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function">BinaryNode <span class="title">remove</span><span class="params">(AnyType x,BinaryNode t)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (t==<span class="keyword">null</span>)</div><div class="line">        <span class="comment">// 没找到不做任何事</span></div><div class="line">    <span class="keyword">int</span> cmp = x companreTo t.element;</div><div class="line">    <span class="keyword">if</span> cmp&gt;<span class="number">0</span></div><div class="line">        ... <span class="comment">//递归remove右子树</span></div><div class="line">    <span class="keyword">if</span> cmp&lt;<span class="number">0</span></div><div class="line">        ... <span class="comment">//递归remove左子树</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> t.left notNull &amp;&amp; t.reght notNull <span class="comment">// 两个子节点</span></div><div class="line">        t.data = findMin (t.right)  <span class="comment">// 找到右子树中最小项,并返回该项的data</span></div><div class="line">        t.right = remove(t.data,t.right) <span class="comment">//从右子树中删除节点,并更新右子树的root</span></div><div class="line">    <span class="keyword">else</span> <span class="comment">//一个子节点</span></div><div class="line">        t = t.left != <span class="keyword">null</span> ? t.left :t.right <span class="comment">//将父节点直接指向改节点的唯一子节点</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> t</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+
+          
         
       
     </div>
@@ -404,8 +391,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -428,20 +420,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/06/Hadoop学习笔记三/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -470,7 +459,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-06T22:06:58+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T22:06:58+08:00">
                 2017-06-06
               </time>
             
@@ -519,8 +508,8 @@
           
 
           
-
           
+
           
 
           
@@ -540,18 +529,29 @@
       
         
           
-          HDFS数据流读取数据
-读取数据的过程
-客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例.
-DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,nameno
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/06/Hadoop学习笔记三/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="HDFS数据流"><a href="#HDFS数据流" class="headerlink" title="HDFS数据流"></a>HDFS数据流</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p><img src="/image/HDFS_data_flow.png" alt="从HDFS读取数据"></p>
+<h3 id="读取数据的过程"><a href="#读取数据的过程" class="headerlink" title="读取数据的过程"></a>读取数据的过程</h3><ol>
+<li>客户端调用FileSystem对象的open()方法,此对象是 DistributedFileSystem的一个示例.</li>
+<li>DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并且对于每一个bkock,namenode都会返回具有该block”最近”的地址.</li>
+<li>DistributedFileSystem返回一个FSDataInputStream对象,client通过调用此对象的read方法从指定地址的datanode获取第一个block.当第一个block获取后,将会关闭连接并从最近的datanode获取下一个block.这些对客户端来说都是透明的.</li>
+</ol>
+<h3 id="Hadoop如何选择’最近’的block"><a href="#Hadoop如何选择’最近’的block" class="headerlink" title="Hadoop如何选择’最近’的block"></a>Hadoop如何选择’最近’的block</h3><p>通过正确配置网络拓扑结构,Hadoop会依照以下优先级选取block地址:</p>
+<ol>
+<li>同一节点(本机)</li>
+<li>同一机架</li>
+<li>同一数据中心</li>
+<li>不同数据中心</li>
+</ol>
+<h2 id="写入数据"><a href="#写入数据" class="headerlink" title="写入数据"></a>写入数据</h2><p><img src="/image/HDFS_data_flow_write.png" alt="从HDFS读取数据"></p>
+<h3 id="写入数据的过程"><a href="#写入数据的过程" class="headerlink" title="写入数据的过程"></a>写入数据的过程</h3><ol>
+<li>客户端调用DFS对象的create()方法向namenode发送一个写请求,namenode在执行完一些检查,保证文件不存在并且客户端有权限创建文件之后返回一个DFSOutputStream对象.</li>
+<li>DFSOutputStream将要写入的HDFS的文件分割成一些包,并将其写入到外置的data queue队列中.DataStrem消费这个队列,从namenode获取一些合适的datanode去存储这些包的副本.</li>
+<li>假定副本级别为3,那么将有3个datanode在流水线中,DataStream线程将包发送给流水线中的第一个datanode存储完成后,依次转发给流水线后面的datanode进行此操作.</li>
+<li>同时DFSOutputStream维护一个ack queue队列,等待流水线里所有datanode存储完成一个包之后,这个包从队列中移除.<br>假如有datanode写入失败,流水线将关闭,ack queue中的包将添加到data queue的前端以保证失败的节点下游的datanode不会丢失包.正常的节点会联系namenode,保证失败节点在恢复后删除掉这些包.余下的包将会写入正常节点,并会在另外的节点上复制,保证分片的数量.</li>
+</ol>
+<h3 id="DFSOutputStream内部原理示意图"><a href="#DFSOutputStream内部原理示意图" class="headerlink" title="DFSOutputStream内部原理示意图"></a>DFSOutputStream内部原理示意图</h3><p><img src="/image/DFSOutputStream内部原理.png" alt="DFSOutputStream内部原理"></p>
+
+          
         
       
     </div>
@@ -564,8 +564,13 @@ DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -588,20 +593,17 @@ DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -630,7 +632,7 @@ DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-26T18:56:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T18:56:41+08:00">
                 2017-03-26
               </time>
             
@@ -679,8 +681,8 @@ DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并
           
 
           
-
           
+
           
 
           
@@ -700,21 +702,32 @@ DistributedFileSystem通过RPC到namenode获取文件第一个block的地址.并
       
         
           
-          hadoop分布式文件系统设计目的
-是为了大文件（大到一台机器无法存储）所设计。
-流式数据读取，一般会在批处理中使用HDFS。
-节点故障是常态，能在机器故障后恢复。
+            <h1 id="hadoop分布式文件系统"><a href="#hadoop分布式文件系统" class="headerlink" title="hadoop分布式文件系统"></a>hadoop分布式文件系统</h1><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol>
+<li>是为了大文件（大到一台机器无法存储）所设计。</li>
+<li>流式数据读取，一般会在批处理中使用HDFS。</li>
+<li>节点故障是常态，能在机器故障后恢复。</li>
+</ol>
+<h2 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h2><p>HDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。</p>
+<p>设计成这么大是为了减少寻址的时间，但是也不应该太大，<br>大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的block上，如果block很少，map任务也会很慢。</p>
+<h2 id="Namenodes-and-Datanodes"><a href="#Namenodes-and-Datanodes" class="headerlink" title="Namenodes and Datanodes"></a>Namenodes and Datanodes</h2><h3 id="HDFS集群两种节点"><a href="#HDFS集群两种节点" class="headerlink" title="HDFS集群两种节点"></a>HDFS集群两种节点</h3><ol>
+<li><p>一个 namenode（master）：</p>
+<p> 管理文件系统的命名空间，维护了所有文件和目录的文件系统的文件树与元数据。</p>
+<p> namenode知道一个文件的所有block在哪个datanode上，但并不会存储这些信息。</p>
+</li>
+<li><p>数个datanode（worker）：</p>
+<p> datanode是文件系统的实际工作者，它们在工作的时候存储或取回block，给namenode报告自己存储了那些block。</p>
+</li>
+</ol>
+<p>如果没有namenode文件系统将不可用。实际上，如果namenode消失了文件系统中的所有文件都会丢失，因为这样会不知道如何由block重建为一个文件。</p>
+<h3 id="保证namenode的可用性"><a href="#保证namenode的可用性" class="headerlink" title="保证namenode的可用性"></a>保证namenode的可用性</h3><ol>
+<li><p>定期向硬盘上写入文件系统的元数据，一般是同步的，原子性的。</p>
+</li>
+<li><p>运行secondary namenode,持续从主拷贝文件系统的更改日志并合并（这将消耗大量的系统资源）。当主namenode不可用时，由于同步会有延迟，数据可能会丢失，此时secondary成为主。</p>
+</li>
+</ol>
+<h2 id="Block-Caching"><a href="#Block-Caching" class="headerlink" title="Block Caching"></a>Block Caching</h2><p>通常bkock会从硬盘中读取，但是重复使用的block会缓存在内存中。默认情况下一个block只会缓存在一个namenode中，但是这个是可以控制的。</p>
 
-BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。
-设计成这么大是为了减少寻址的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/26/Hadoop学习笔记二/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -727,8 +740,13 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -751,20 +769,17 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/记录艰难的Hadoop环境搭建过程/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -793,7 +808,7 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T20:52:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-19T20:52:08+08:00">
                 2017-02-19
               </time>
             
@@ -842,8 +857,8 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
           
 
           
-
           
+
           
 
           
@@ -863,19 +878,44 @@ BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会�
       
         
           
-          最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。
-Hadoop伪分布式环境搭建
-安装JDK配置环境变量，安装ssh配置免密登录。
-安装Hadoop：
-12cd ~/downloadtar -z
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/记录艰难的Hadoop环境搭建过程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>最近在读《 Hadoop The Definitive Guide》一书，为了运行书上的示例程序，在虚拟机上搭建了Hadoop伪分布式环境，于是记下其过程。</p>
+<h1 id="Hadoop伪分布式环境搭建"><a href="#Hadoop伪分布式环境搭建" class="headerlink" title="Hadoop伪分布式环境搭建"></a>Hadoop伪分布式环境搭建</h1><ol>
+<li>安装JDK配置环境变量，安装ssh配置免密登录。</li>
+<li><p>安装Hadoop：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/download</div><div class="line">tar -zxvf ./hadoop-2.7.3.tar.gz -C /usr/local</div></pre></td></tr></table></figure>
+</li>
+<li><p>伪分布式配置<br>修改配置文件 : <code>./etc/hadoop/core-site.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>Abase for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件 : <code>./etc/hadoop/hdfs-site.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/usr/local/hadoop/tmp/dfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<h2 id="Hadoop配置文件说明"><a href="#Hadoop配置文件说明" class="headerlink" title="Hadoop配置文件说明"></a>Hadoop配置文件说明</h2><p>Hadoop 的运行方式是由配置文件决定的（运行 Hadoop 时会读取配置文件），因此如果需要从伪分布式模式切换回非分布式模式，需要删除 core-site.xml 中的配置项。</p>
+<p>此外，伪分布式虽然只需要配置 fs.defaultFS 和 dfs.replication 就可以运行（官方教程如此），不过若没有配置 hadoop.tmp.dir 参数，则默认使用的临时目录为 /tmp/hadoo-hadoop，而这个目录在重启时有可能被系统清理掉，导致必须重新执行 format 才行。所以我们进行了设置，同时也指定 dfs.namenode.name.dir 和dfs.datanode.data.dir，否则在接下来的步骤中可能会出错。</p>
+</blockquote>
+<ol>
+<li><p>启动Hadoop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd $&#123;HADOOP_HOME&#125;</div><div class="line">./bin/hdfs namenode -format </div><div class="line">./sbin/start-dfs.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行WordCount示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./bin/hdfs dfs -mkdir -p /user/hadoop     # 创建HDFS目录</div><div class="line">./bin/hdfs dfs -mkdir input</div><div class="line">./bin/hdfs dfs -put etc/hadoop/*.xml input  # 将配置文件作为输入</div><div class="line">./bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep input output &apos;dfs[a-z.]+&apos;</div><div class="line">./bin/hdfs dfs -cat output/*  # 查看输出结果</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>运行Hadoop程序时output目录不能存在,否则会报错。这是为了防止数据丢，比如新的任务结果覆盖了耗时很长的久任务结果，这往往是人们不愿意看到的。</p>
+</blockquote>
+<ol>
+<li>启动YARN<br>修改重命名配置文件 <code>./etc/hadoop/mapred-site.xml.template</code> ： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>增加以下配置:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>修改<code>./etc/hadoop/yarn-site.xml</code> ：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">             <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>启动YARN，需要先执行<code>./sbin/start-dfs.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./sbin/start-yarn.sh</div></pre></td></tr></table></figure></p>
+<p>至此,Hadoop伪分布式环境已经搭建完毕了~</p>
+
+          
         
       
     </div>
@@ -888,8 +928,13 @@ Hadoop伪分布式环境搭建
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -912,20 +957,17 @@ Hadoop伪分布式环境搭建
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/02/19/Hadoop学习笔记一/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -954,7 +996,7 @@ Hadoop伪分布式环境搭建
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T13:40:32+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-19T13:40:32+08:00">
                 2017-02-19
               </time>
             
@@ -1003,8 +1045,8 @@ Hadoop伪分布式环境搭建
           
 
           
-
           
+
           
 
           
@@ -1024,18 +1066,30 @@ Hadoop伪分布式环境搭建
       
         
           
-          Map and Reduce相关重点概念MapReduce
-MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. 
+            <h1 id="Map-and-Reduce相关重点概念"><a href="#Map-and-Reduce相关重点概念" class="headerlink" title="Map and Reduce相关重点概念"></a>Map and Reduce相关重点概念</h1><h2 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h2><blockquote>
+<p>MapReduce works by breaking the processing into two phases: the map phase and thereduce phase. </p>
+</blockquote>
+<p>MapReduce把程序分成两个阶段:一个map阶段和一个reduce阶段.</p>
+<blockquote>
+<p>The output from the map function is processed by the MapReduce framework beforebeing sent to the reduce function.<br>This processing sorts and groups the key-value pairsby key.</p>
+</blockquote>
+<p>经过map之后的结果键值对,MapReduce框架会在reduce之前进行排序和分组.</p>
+<h2 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h2><h3 id="任务拆分"><a href="#任务拆分" class="headerlink" title="任务拆分"></a>任务拆分</h3><blockquote>
+<p>Hadoop divides the input to a MapReduce job into fixed-size pieces called input splits,or just splits. Hadoop creates one map task for each split, which runs the user-definedmap function for each record in the split.</p>
+</blockquote>
+<p>Hadoop将输入输入的任务拆分成固定大小的片段,并为每一个片段执行map函数.</p>
+<p>任务拆分是为了在多台机器上面并行处理,任务如果拆分的足够小,那么更容易进行负载均衡.<br>但是另一方面,如果分块拆分的太小了,那么花在分块调度上面的时间可能会超过执行任务的时间.<br>对于大多数任务,分块的大小为128M,这也是HDFS默认的分块大小.</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><blockquote>
+<p>Map tasks write their output to the local disk, not to HDFS.</p>
+</blockquote>
+<p>Map会将输出存在本地,而不是HDFS.<br>因为Map产生的结果是中间结果,job完成后这些中间结果是可以丢弃的.</p>
+<h3 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h3><p>Map的输出结果在传递给Reduce之前会在本地进行排序,然后通过网络发送的要进行Reduce的节点上合并数据,再将合并后的数据传入用户定义的Reduce.<br>Reduce的结果为了保持可靠性,输出结果会存到HDFS中.</p>
+<h3 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle"></a>shuffle</h3><p>在Map和Reduce之间的操作.</p>
+<p><strong>整个数据流示意图</strong><br><img src="/image/DataFlow.png" alt="data flow"></p>
+<h1 id="Conbiner-Fuctions"><a href="#Conbiner-Fuctions" class="headerlink" title="Conbiner Fuctions"></a>Conbiner Fuctions</h1><h2 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h2><p>Mapreduce作业的会被集群之间的带宽限制性能,Conbiner被用来优化map和reduce作业之间的数据交换<br>hadoop允许用户在map和reduce作业之间自定义conbiner function,因为这是一个优化性能的操作,<br>hadoop并能保证会在map作业输出时候执行几次.</p>
+<h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><p>比如求最大值的时候,可以在各节点计算出最大值之后,在reduce作业中计算各节点最大值中的最大值.</p>
 
-MapReduce把程序分成两个阶段:一个ma
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Hadoop学习笔记一/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1048,8 +1102,13 @@ MapReduce把程序分成两个阶段:一个ma
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1072,20 +1131,17 @@ MapReduce把程序分成两个阶段:一个ma
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/01/29/第一个blog/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/01/29/第一个blog/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Du Pu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/image/dp_img.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Du Pu的Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Du Pu的Blog" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
 
     
       <header class="post-header">
@@ -1114,7 +1170,7 @@ MapReduce把程序分成两个阶段:一个ma
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T18:19:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T18:19:08+08:00">
                 2017-01-29
               </time>
             
@@ -1163,8 +1219,8 @@ MapReduce把程序分成两个阶段:一个ma
           
 
           
-
           
+
           
 
           
@@ -1184,21 +1240,14 @@ MapReduce把程序分成两个阶段:一个ma
       
         
           
-          新的开始鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    
-新年目标
-每周更新一篇有价值的文章.
-能抽出时间学习Scala
-学习更多大数据技能
-
+            <h1 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h1><p>鸡年是一个新的开始,之前的工作和学习中也积累了不少,但是都只是记录到我的OneNote中了.<br>趁着新年休息把自己的Blog搭建好,准备逐步把自己之前积累的东西与别人分享一下.    </p>
+<h1 id="新年目标"><a href="#新年目标" class="headerlink" title="新年目标"></a>新年目标</h1><ol>
+<li><del>每周更新一篇有价值的文章.</del></li>
+<li>能抽出时间学习Scala</li>
+<li>学习更多大数据技能</li>
+</ol>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/29/第一个blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1211,8 +1260,13 @@ MapReduce把程序分成两个阶段:一个ma
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1230,7 +1284,7 @@ MapReduce把程序分成两个阶段:一个ma
 
   
 
-          
+
           </div>
           
 
@@ -1262,10 +1316,12 @@ MapReduce把程序分成两个阶段:一个ma
                src="/image/dp_img.jpg"
                alt="Du Pu" />
           <p class="site-author-name" itemprop="name">Du Pu</p>
-          <p class="site-description motion-element" itemprop="description">杜璞的Blog,Java相关技术分享</p>
+           
+              <p class="site-description motion-element" itemprop="description">杜璞的Blog,Java相关技术分享</p>
+          
         </div>
         <nav class="site-state motion-element">
-        
+
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
@@ -1276,8 +1332,10 @@ MapReduce把程序分成两个阶段:一个ma
           
 
           
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -1285,8 +1343,10 @@ MapReduce把程序分成两个阶段:一个ma
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1312,7 +1372,7 @@ MapReduce把程序分成两个阶段:一个ma
               <span class="links-of-author-item">
                 <a href="http://weibo.com/1195030984" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
                   微博
                 </a>
@@ -1340,6 +1400,8 @@ MapReduce把程序分成两个阶段:一个ma
 
 
       </section>
+
+      
 
       
 
@@ -1371,7 +1433,7 @@ MapReduce把程序分成两个阶段:一个ma
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
@@ -1382,9 +1444,13 @@ MapReduce把程序分成两个阶段:一个ma
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1404,6 +1470,8 @@ MapReduce把程序分成两个阶段:一个ma
 
 
   
+
+
 
 
 
@@ -1480,8 +1548,15 @@ MapReduce把程序分成两个阶段:一个ma
 
 
 
+
+
+
+
   
-  
+
+
+
+
 
   
 
@@ -1490,7 +1565,6 @@ MapReduce把程序分成两个阶段:一个ma
   
 
   
-
 
 </body>
 </html>
