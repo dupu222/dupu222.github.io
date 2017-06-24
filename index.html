@@ -270,6 +270,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/24/一些容易忽视的细节总结-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Du Pu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/dp_img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Du Pu的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/24/一些容易忽视的细节总结-一/" itemprop="url">
+                  一些容易忽视的细节总结(一)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T11:45:50+08:00">
+                2017-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/24/一些容易忽视的细节总结-一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/24/一些容易忽视的细节总结-一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h1><p><code>最近参加了一些面试,总结了一些面试中没有回答出来,或者很有意思的问题.</code></p>
+<h1 id="1-如果在HashMap中使用没有重写hashcode-方法的自定义对象会发生什么"><a href="#1-如果在HashMap中使用没有重写hashcode-方法的自定义对象会发生什么" class="headerlink" title="1.    如果在HashMap中使用没有重写hashcode()方法的自定义对象会发生什么?"></a>1.    如果在HashMap中使用没有重写hashcode()方法的自定义对象会发生什么?</h1><p>首先在回答这个问题之前要对HashMap的实现有所了解,HashMap的put()/get()/remove()方法都遵循以下原则:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 只是表达插入的实现过程,与实际源码的实现有区别,查找和删除的过程也类似.</span></div><div class="line"><span class="keyword">int</span> h = hash(obj.hashcode()) <span class="comment">//对传入对象重hash</span></div><div class="line"><span class="keyword">int</span> index = indexFor(lengh,h)<span class="comment">//计算在桶中的位置</span></div><div class="line"><span class="keyword">if</span>  (table[index] == <span class="keyword">null</span> ) &#123; <span class="comment">//如果桶中的位置为空就放入一个新节点   </span></div><div class="line">     table[index] = newNode(obj);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    ... <span class="comment">//在链表或红黑树中查找是否存在新插入的元素</span></div><div class="line">    <span class="keyword">if</span> (obj.equals(ele)) ... <span class="comment">//存在就替换</span></div><div class="line">    <span class="keyword">else</span> ...<span class="comment">//否则在桶中链表中放上新节点</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从上面伪码可以看出,需要先调用对象hashcode方法计算在数组中的位置,如果这个位置为空则需调用对象的equals方法在数组的链表中是否存在该对象.</p>
+<p>假如没有实现该对象的hashcode方法则默认调用Object类的hashcode方法,因为默认的hashcode方法会返回内存中的位置,那么即使是相同的对象(equals返回true)的hashcode也会不同,最终造成的结果是存到HashMap中的值永远也取不出,也删不掉.</p>
+<h1 id="2-待续"><a href="#2-待续" class="headerlink" title="2. 待续"></a>2. 待续</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/18/数据结构之二叉树(一)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1351,7 +1508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1362,7 +1519,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1373,7 +1530,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
