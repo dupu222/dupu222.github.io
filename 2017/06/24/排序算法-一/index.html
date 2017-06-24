@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hadoop,读书笔记," />
+  <meta name="keywords" content="排序算法,算法," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="hadoop分布式文件系统设计目的 是为了大文件（大到一台机器无法存储）所设计。 流式数据读取，一般会在批处理中使用HDFS。 节点故障是常态，能在机器故障后恢复。  BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。 设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
-<meta name="keywords" content="Hadoop,读书笔记">
+<meta name="description" content="概述总结一下常用的排序算法,下面依次介绍8大排序算法.一下假设N为待排序数组元素的个数. 插入排序(Insertion Sort)基本思想插入排序是最简单排序,由N-1次排序组成,从i=1至N-1次排序之后,保证数组a[0]至a[i]为已排序的状态. 即开始排序之前从a[0]至a[i-1]始终是已排序状态,每次把a[i]处的元素依次向前交换,直到a[0]至a[i]保证顺序为止. 代码实现12345">
+<meta name="keywords" content="排序算法,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop学习笔记二">
-<meta property="og:url" content="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/index.html">
+<meta property="og:title" content="排序算法(一)">
+<meta property="og:url" content="http://dupu222.github.io/2017/06/24/排序算法-一/index.html">
 <meta property="og:site_name" content="Du Pu的Blog">
-<meta property="og:description" content="hadoop分布式文件系统设计目的 是为了大文件（大到一台机器无法存储）所设计。 流式数据读取，一般会在批处理中使用HDFS。 节点故障是常态，能在机器故障后恢复。  BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。 设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
-<meta property="og:updated_time" content="2017-03-26T15:59:23.000Z">
+<meta property="og:description" content="概述总结一下常用的排序算法,下面依次介绍8大排序算法.一下假设N为待排序数组元素的个数. 插入排序(Insertion Sort)基本思想插入排序是最简单排序,由N-1次排序组成,从i=1至N-1次排序之后,保证数组a[0]至a[i]为已排序的状态. 即开始排序之前从a[0]至a[i-1]始终是已排序状态,每次把a[i]处的元素依次向前交换,直到a[0]至a[i]保证顺序为止. 代码实现12345">
+<meta property="og:updated_time" content="2017-06-24T08:34:46.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop学习笔记二">
-<meta name="twitter:description" content="hadoop分布式文件系统设计目的 是为了大文件（大到一台机器无法存储）所设计。 流式数据读取，一般会在批处理中使用HDFS。 节点故障是常态，能在机器故障后恢复。  BlocksHDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。 设计成这么大是为了减少寻址的时间，但是也不应该太大，大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的">
+<meta name="twitter:title" content="排序算法(一)">
+<meta name="twitter:description" content="概述总结一下常用的排序算法,下面依次介绍8大排序算法.一下假设N为待排序数组元素的个数. 插入排序(Insertion Sort)基本思想插入排序是最简单排序,由N-1次排序组成,从i=1至N-1次排序之后,保证数组a[0]至a[i]为已排序的状态. 即开始排序之前从a[0]至a[i-1]始终是已排序状态,每次把a[i]处的元素依次向前交换,直到a[0]至a[i]保证顺序为止. 代码实现12345">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/"/>
+  <link rel="canonical" href="http://dupu222.github.io/2017/06/24/排序算法-一/"/>
 
 
 
 
 
-  <title> Hadoop学习笔记二 | Du Pu的Blog </title>
+  <title> 排序算法(一) | Du Pu的Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/">
+    <link itemprop="mainEntityOfPage" href="http://dupu222.github.io/2017/06/24/排序算法-一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Du Pu">
@@ -291,7 +291,7 @@
             
             
               
-                Hadoop学习笔记二
+                排序算法(一)
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T18:56:41+08:00">
-                2017-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T15:20:18+08:00">
+                2017-06-24
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
-                    <span itemprop="name">Hadoop</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -347,9 +347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/26/Hadoop学习笔记二/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/24/排序算法-一/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/26/Hadoop学习笔记二/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/24/排序算法-一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -375,30 +375,10 @@
       
 
       
-        <h1 id="hadoop分布式文件系统"><a href="#hadoop分布式文件系统" class="headerlink" title="hadoop分布式文件系统"></a>hadoop分布式文件系统</h1><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol>
-<li>是为了大文件（大到一台机器无法存储）所设计。</li>
-<li>流式数据读取，一般会在批处理中使用HDFS。</li>
-<li>节点故障是常态，能在机器故障后恢复。</li>
-</ol>
-<h2 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h2><p>HDFS中最小的存储单位，默认最小为128M。小于128M并不会占用一个单独的block。</p>
-<p>设计成这么大是为了减少寻址的时间，但是也不应该太大，<br>大的block从硬盘转换的时间也会相应变慢。一般map任务会工作在一个单独的block上，如果block很少，map任务也会很慢。</p>
-<h2 id="Namenodes-and-Datanodes"><a href="#Namenodes-and-Datanodes" class="headerlink" title="Namenodes and Datanodes"></a>Namenodes and Datanodes</h2><h3 id="HDFS集群两种节点"><a href="#HDFS集群两种节点" class="headerlink" title="HDFS集群两种节点"></a>HDFS集群两种节点</h3><ol>
-<li><p>一个 namenode（master）：</p>
-<p> 管理文件系统的命名空间，维护了所有文件和目录的文件系统的文件树与元数据。</p>
-<p> namenode知道一个文件的所有block在哪个datanode上，但并不会存储这些信息。</p>
-</li>
-<li><p>数个datanode（worker）：</p>
-<p> datanode是文件系统的实际工作者，它们在工作的时候存储或取回block，给namenode报告自己存储了那些block。</p>
-</li>
-</ol>
-<p>如果没有namenode文件系统将不可用。实际上，如果namenode消失了文件系统中的所有文件都会丢失，因为这样会不知道如何由block重建为一个文件。</p>
-<h3 id="保证namenode的可用性"><a href="#保证namenode的可用性" class="headerlink" title="保证namenode的可用性"></a>保证namenode的可用性</h3><ol>
-<li><p>定期向硬盘上写入文件系统的元数据，一般是同步的，原子性的。</p>
-</li>
-<li><p>运行secondary namenode,持续从主拷贝文件系统的更改日志并合并（这将消耗大量的系统资源）。当主namenode不可用时，由于同步会有延迟，数据可能会丢失，此时secondary成为主。</p>
-</li>
-</ol>
-<h2 id="Block-Caching"><a href="#Block-Caching" class="headerlink" title="Block Caching"></a>Block Caching</h2><p>通常bkock会从硬盘中读取，但是重复使用的block会缓存在内存中。默认情况下一个block只会缓存在一个namenode中，但是这个是可以控制的。</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>总结一下常用的排序算法,下面依次介绍8大排序算法.一下假设N为待排序数组元素的个数.</p>
+<h2 id="插入排序-Insertion-Sort"><a href="#插入排序-Insertion-Sort" class="headerlink" title="插入排序(Insertion Sort)"></a>插入排序(Insertion Sort)</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>插入排序是最简单排序,由N-1次排序组成,从i=1至N-1次排序之后,保证数组a[0]至a[i]为已排序的状态.</p>
+<p>即开始排序之前从a[0]至a[i-1]始终是已排序状态,每次把a[i]处的元素依次向前交换,直到a[0]至a[i]保证顺序为止.</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> j;<span class="comment">//保存待插入的角标</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">            <span class="keyword">int</span> tmp = a[i];<span class="comment">//tmp元素保存待插入的元素</span></div><div class="line">            <span class="keyword">for</span> ( j = i; j &gt; <span class="number">0</span> &amp;&amp; a[j - <span class="number">1</span>] &lt; tmp; j--) &#123;</div><div class="line">                a[j] = a[j - <span class="number">1</span>];<span class="comment">//依次将大于待排序值的元素向后移动</span></div><div class="line">            &#125;</div><div class="line">            a[j] = tmp;<span class="comment">//把待排序元素插入对应的位置</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,9 +429,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+            <a href="/tags/排序算法/" rel="tag"># 排序算法</a>
           
-            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -464,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/19/记录艰难的Hadoop环境搭建过程/" rel="next" title="记录艰难的Hadoop环境搭建过程">
-                <i class="fa fa-chevron-left"></i> 记录艰难的Hadoop环境搭建过程
+              <a href="/2017/06/24/一些容易忽视的细节总结-一/" rel="next" title="一些容易忽视的细节总结(一)">
+                <i class="fa fa-chevron-left"></i> 一些容易忽视的细节总结(一)
               </a>
             
           </div>
@@ -473,10 +453,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/06/Hadoop学习笔记三/" rel="prev" title="Hadoop学习笔记三">
-                Hadoop学习笔记三 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hadoop分布式文件系统"><span class="nav-number">1.</span> <span class="nav-text">hadoop分布式文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计目的"><span class="nav-number">1.1.</span> <span class="nav-text">设计目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blocks"><span class="nav-number">1.2.</span> <span class="nav-text">Blocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Namenodes-and-Datanodes"><span class="nav-number">1.3.</span> <span class="nav-text">Namenodes and Datanodes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS集群两种节点"><span class="nav-number">1.3.1.</span> <span class="nav-text">HDFS集群两种节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保证namenode的可用性"><span class="nav-number">1.3.2.</span> <span class="nav-text">保证namenode的可用性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-Caching"><span class="nav-number">1.4.</span> <span class="nav-text">Block Caching</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序-Insertion-Sort"><span class="nav-number">1.1.</span> <span class="nav-text">插入排序(Insertion Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本思想"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.1.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -778,9 +754,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://dupu222.github.io/2017/03/26/Hadoop学习笔记二/';
-          this.page.identifier = '2017/03/26/Hadoop学习笔记二/';
-          this.page.title = 'Hadoop学习笔记二';
+          this.page.url = 'http://dupu222.github.io/2017/06/24/排序算法-一/';
+          this.page.identifier = '2017/06/24/排序算法-一/';
+          this.page.title = '排序算法(一)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://dupu-blog.disqus.com/embed.js';
